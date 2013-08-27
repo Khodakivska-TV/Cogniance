@@ -7,8 +7,8 @@ For passing interview
 In this project you can find folders:
 
 1. SQL - includes 3 .txt files - 
-					                            Create_DB_and_Tables.txt
-					                            Fill_Tables.txt
+					                            Create_DB_and_Tables.txt; 
+					                            Fill_Tables.txt; 
 					                            Requests.txt
 
 2. Jmeter with 1 .jmx file -
