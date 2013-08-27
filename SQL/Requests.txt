@@ -1,0 +1,107 @@
+/* 1. Point out name, surname of employee who doesn't work in any department.
+Result set: name, surname and position. */
+Select Name, Surname, Position
+from Employees
+where Id_dep is NULL;
+
+/* 2. Find Head of Department for each department.
+Result set: department (name), name, surname of Head of department. */
+Select Department, Name, Surname
+from Departments inner join Employees
+on Departments.id_dep=Employees.id_dep
+where position="Head of Department";
+
+/* 3. Point out employees which surname ends on -nko.
+Result set: name, surname. */
+Select Name, Surname
+from Employees
+where surname like "%nko";
+
+/* 4. Find out how many employees work on each current project.
+Result set: id_project, project (name), number of employees. */
+Select CP.Id_project, CP.Name, count(Empl_in_CP.id_name) as Employees 
+from CP inner join Empl_in_CP 
+on CP.id_project=Empl_in_CP.id_project 
+Group by name;
+
+/* 5. Find out for each department the efficiency of writing proposals  the in current year (ratio of number of successful proposals to total number of written proposals).
+Result set: department (name), ratio of efficiency. */
+Select Department, (success_pr/total_pr) as Efficiency_of_Writing_Proposals 
+from Departments;
+
+/* 6. Find out how many current projects in each department.
+Result set: department (name), number of current projects. */
+Select Department, count(name) as Number_of_CP 
+from Departments inner join CP 
+on Departments.id_dep=CP.id_dep 
+Group by department;
+
+/* 7. Find out in how many current projects is involved each employee.
+Result set: name, surname and number of current projects. */
+Select Employees.Name, Surname, count(id_project) as Number_of_CP 
+from Employees inner join Empl_in_CP 
+on Employees.id_name=Empl_in_CP.id_name 
+Group by Employees.id_name;
+
+/* 8. Find out how many current projects responsible employees have.
+Result set: name, surname of responsible employee, position and number of current projects. */
+Select Employees.Name, Surname, Position, count(id_project) as Number_of_CP
+from Employees inner join CP
+on Employees.id_name=CP.id_name
+Group by surname;
+
+/* 9. Point out projects which have deadline later than 2013.
+Result set: project (name), owner, date of initiation and deadline. */
+Select Name, Owner, Initiation, Deadline
+from CP
+where deadline>"2013-12-31";
+
+/* 10. Point out projects which have initiated in 2012.
+Result set: project (name), date of initiation, date of deadline, department. *
+Select Name, Initiation, Deadline, Department 
+from CP inner join Departments 
+on CP.Id_dep=Departments.Id_dep 
+where Initiation>"2011-12-31" and Initiation<"2013-1-1";
+
+/* 11. Sort Table 1 by surname in alphabetical order.
+Result set: name, surname, age, sex, position, department. */
+Select Name, Surname, Floor(DATEDIFF(Sysdate(), Birth_Date)/365.25) as Age, Sex, Position, Department
+from Employees inner join Departments
+on Employees.id_dep=Departments.id_dep
+Order by surname;
+
+/* 12. Find out average age of men and women in the company.
+Result set: Sex, average age of men and average age of women. */
+Select Sex, Floor(avg(DATEDIFF(Sysdate(), Birth_Date)/365.25)) as Avg_Age
+from Employees
+Group by Sex;
+
+/* 13. Find out owner who has more than 2 current projects.
+Result set: owner. */
+Select Owner from CP 
+Group by Owner 
+having count(owner)>2;
+
+/* 14. Find out employee who is involved in maximum number of current projects.
+Result set: name, surname, position, department and number of current projects sorted by surname. */
+Select Employees.Name, Employees.Surname, Employees.Position, Count(Empl_in_CP.id_name) as Number_of_CPs, Department
+from Employees inner join Empl_in_CP 
+on Employees.Id_name=Empl_in_CP.Id_name 
+inner join Departments
+on Employees.Id_dep=Departments.Id_dep
+group by Empl_in_CP.Id_name 
+having count(Empl_in_CP.Id_name) 
+= 
+(Select count(Empl_in_CP.id_name) 
+from Empl_in_CP 
+group by Empl_in_CP.Id_name 
+order by count(Empl_in_CP.Id_name) Desc limit 1)
+order by Employees.Surname;
+
+/* 15. Olena Vovchuk was promoted to Middle Consultant position. */
+Update Employees
+set Position="Middle Consultant"
+where name="Olena" and surname="Vovchuk";
+
+Select * from Employees;
+

@@ -1,0 +1,45 @@
+CREATE DATABASE Company_Structure;
+
+USE Company_Structure;
+
+CREATE TABLE Employees 
+(
+Id_name int(2) not null, 
+Name varchar(255) not null, 
+Surname varchar(255) not null, 
+Birth_date date not null, 
+Sex varchar(1) not null, 
+Position varchar(255) not null, 
+Id_dep int(2)
+);
+/* Id_dep - Id of Department */
+
+CREATE TABLE Departments 
+(
+Id_dep int(2) not null, 
+Department varchar(255) not null, 
+Total_pr int(2) not null, 
+Success_pr int(2) not null
+);
+/* Total_pr - Total number of proposals in current year and Success_pr - Number of successful proposals in current year */
+
+CREATE TABLE CP 
+(
+Id_project int(4) not null, 
+Name varchar(255) not null, 
+Owner varchar(255) not null, 
+Id_dep int(2) not null, 
+Id_name int(2) not null, 
+Initiation date not null, 
+Deadline date not null
+);
+/* CP - Current Projects, Id_dep - Id of Responsible Department, Id_name - Id of Responsible Employee, Initiation - Date of Project Initiation and Deadline - Date of Project Deadline */
+
+CREATE TABLE Empl_in_CP 
+(
+Id_project int(4) not null, 
+Id_name int(2) not null
+);
+/* Empl_in_CP - Employees Involved in Current Project */
+
+SHOW TABLES;

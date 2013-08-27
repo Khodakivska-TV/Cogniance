@@ -1,0 +1,105 @@
+INSERT INTO Employees (Id_name, Name, Surname, Birth_Date, Sex, Position) VALUES (1, "Ivan", "Kovalenko", "1963-2-17", "M", "Director");
+INSERT INTO Employees (Id_name, Name, Surname, Birth_Date, Sex, Position) VALUES (2, "Anna", "Lapchuk", "1971-7-5", "F", "Accountant");
+INSERT INTO Employees VALUES (3, "Ihor", "Petrenko", "1969-11-30", "M", "Head of Department", 1);
+INSERT INTO Employees VALUES (4, "Pavlo", "Bondar", "1975-9-5", "M", "Senior consultant", 1);
+INSERT INTO Employees VALUES (5, "Olga", "Denysenko", "1984-6-29", "F", "Middle consultant", 1);
+INSERT INTO Employees VALUES (6, "Bogdan", "Marchenko", "1988-3-4", "M", "Junior consultant", 1);
+INSERT INTO Employees VALUES (7, "Sergii", "Brovko", "1972-8-28", "M", "Head of Department", 2);
+INSERT INTO Employees VALUES (8, "Vitalii", "Samchuk", "1979-11-17", "M", "Senior consultant", 2);
+INSERT INTO Employees VALUES (9, "Nina", "Pikchuk", "1985-1-13", "F", "Middle consultant", 2);
+INSERT INTO Employees VALUES (10, "Denis", "Maksymenko", "1980-5-10", "M", "Middle consultant", 2);
+INSERT INTO Employees VALUES (11, "Olena", "Vovchuk", "1988-8-21", "F", "Junior consultant", 2);
+INSERT INTO Employees VALUES (12, "Roman", "Nazarenko", "1987-5-27", "M", "Junior consultant", 2);
+INSERT INTO Employees VALUES (13, "Maksym", "Bondarenko", "1970-12-8", "M", "Head of Department", 3);
+INSERT INTO Employees VALUES (14, "Mykola", "Kravchenko", "1978-10-3", "M", "Senior consultant", 3);
+INSERT INTO Employees VALUES (15, "Ludmyla", "Ivanenko", "1981-2-7", "F", "Senior consultant", 3);
+INSERT INTO Employees VALUES (16, "Oleksii", "Brovchuk", "1982-6-17", "M", "Middle consultant", 3);
+INSERT INTO Employees VALUES (17, "Petro", "Marchuk", "1984-4-20", "M", "Middle consultant", 3);
+INSERT INTO Employees VALUES (18, "Dmytro", "Vasylenko", "1983-1-6", "M", "Middle consultant", 3);
+INSERT INTO Employees VALUES (19, "Andrii", "Mykolaychuk", "1989-2-19", "M", "Junior consultant", 3);
+INSERT INTO Employees VALUES (20, "Kateryna", "Romanenko", "1985-11-11", "F", "Junior consultant", 3);
+
+Select * From Employees;
+
+
+INSERT INTO Departments VALUES (1, "General issue of energy efficiency", 5, 3);
+INSERT INTO Departments VALUES (2, "Energy audit", 8, 4);
+INSERT INTO Departments VALUES (3, "Implementation of energy effective equipment", 5, 2);
+
+Select * From Departments;
+
+
+INSERT INTO CP VALUES (1105, "Energy audit of Sugar Mill", "Sugar Mill", 2, 7, "2011-6-11", "2013-12-31");
+INSERT INTO CP VALUES (1111, "Modernization of Brewery", "Brewery", 3, 13, "2011-9-8", "2013-12-31");
+INSERT INTO CP VALUES (1203, "Biomass Potential of Ukraine", "Agency B2E", 1, 4, "2012-2-15", "2013-12-31");
+INSERT INTO CP VALUES (1209, "Modernization of Pharmacological Plant", "Pharmacological Plant", 3, 13, "2012-4-21", "2015-12-31");
+INSERT INTO CP VALUES (1210, "Modernization of Hospital heating system", "Hospital", 3, 14, "2012-5-5", "2014-12-31");
+INSERT INTO CP VALUES (1211, "Energy audit of Sunflower Oil Plant", "Sunflower Oil Plant", 2, 7, "2012-9-27", "2014-12-31");
+INSERT INTO CP VALUES (1212, "Estimation of potential of energy saving technologies implementation in building", "Building Company", 1, 3, "2012-10-18", "2015-12-31");
+INSERT INTO CP VALUES (1301, "Sraw Potential of Ukraine", "Agency B2E", 1, 4, "2013-2-24", "2013-12-31");
+INSERT INTO CP VALUES (1302, "Energy audit of School heating system", "School", 2, 8, "2013-3-4", "2013-12-31");
+INSERT INTO CP VALUES (1303, "Modernization of School heating system", "School", 3, 15, "2013-3-21", "2014-12-31");
+INSERT INTO CP VALUES (1304, "Estimation of potential of pellets export from Ukraine to EU", "Agency B2E", 1, 4, "2013-5-15", "2013-12-31");
+INSERT INTO CP VALUES (1305, "Modernization of Sugar Mill", "Sugar Mill", 3, 13, "2013-5-21", "2016-12-31");
+INSERT INTO CP VALUES (1306, "Modernization of Sunflower Oil Plant", "Sunflower Oil Plant", 3, 14, "2013-5-26", "2015-12-31");
+INSERT INTO CP VALUES (1307, "Energy audit of Ironworks", "Ironworks", 2, 7, "2013-7-19", "2015-12-31");
+INSERT INTO CP VALUES (1308, "Estimation of potential of organic waste in Ukraine", "Agency B2E", 1, 3, "2013-8-14", "2016-12-31");
+INSERT INTO CP VALUES (1309, "Modernization of Ironworks", "Ironworks", 3, 13, "2013-8-22", "2017-12-31");
+
+Select * From CP;
+
+
+INSERT INTO Empl_in_CP VALUES (1105, 7);
+INSERT INTO Empl_in_CP VALUES (1105, 9);
+INSERT INTO Empl_in_CP VALUES (1105, 12);
+INSERT INTO Empl_in_CP VALUES (1111, 13);
+INSERT INTO Empl_in_CP VALUES (1111, 16);
+INSERT INTO Empl_in_CP VALUES (1111, 20);
+INSERT INTO Empl_in_CP VALUES (1203, 4);
+INSERT INTO Empl_in_CP VALUES (1203, 5);
+INSERT INTO Empl_in_CP VALUES (1209, 13);
+INSERT INTO Empl_in_CP VALUES (1209, 17);
+INSERT INTO Empl_in_CP VALUES (1209, 18);
+INSERT INTO Empl_in_CP VALUES (1209, 20);
+INSERT INTO Empl_in_CP VALUES (1210, 14);
+INSERT INTO Empl_in_CP VALUES (1210, 16);
+INSERT INTO Empl_in_CP VALUES (1210, 17);
+INSERT INTO Empl_in_CP VALUES (1211, 7);
+INSERT INTO Empl_in_CP VALUES (1211, 8);
+INSERT INTO Empl_in_CP VALUES (1211, 10);
+INSERT INTO Empl_in_CP VALUES (1211, 11);
+INSERT INTO Empl_in_CP VALUES (1212, 3);
+INSERT INTO Empl_in_CP VALUES (1212, 5);
+INSERT INTO Empl_in_CP VALUES (1212, 6);
+INSERT INTO Empl_in_CP VALUES (1301, 4);
+INSERT INTO Empl_in_CP VALUES (1301, 6);
+INSERT INTO Empl_in_CP VALUES (1302, 8);
+INSERT INTO Empl_in_CP VALUES (1302, 9);
+INSERT INTO Empl_in_CP VALUES (1303, 15);
+INSERT INTO Empl_in_CP VALUES (1303, 18);
+INSERT INTO Empl_in_CP VALUES (1303, 9);
+INSERT INTO Empl_in_CP VALUES (1304, 4);
+INSERT INTO Empl_in_CP VALUES (1304, 5);
+INSERT INTO Empl_in_CP VALUES (1305, 13);
+INSERT INTO Empl_in_CP VALUES (1305, 15);
+INSERT INTO Empl_in_CP VALUES (1305, 20);
+INSERT INTO Empl_in_CP VALUES (1305, 7);
+INSERT INTO Empl_in_CP VALUES (1306, 14);
+INSERT INTO Empl_in_CP VALUES (1306, 16);
+INSERT INTO Empl_in_CP VALUES (1306, 19);
+INSERT INTO Empl_in_CP VALUES (1306, 8);
+INSERT INTO Empl_in_CP VALUES (1307, 7);
+INSERT INTO Empl_in_CP VALUES (1307, 10);
+INSERT INTO Empl_in_CP VALUES (1307, 11);
+INSERT INTO Empl_in_CP VALUES (1307, 12);
+INSERT INTO Empl_in_CP VALUES (1308, 3);
+INSERT INTO Empl_in_CP VALUES (1308, 4);
+INSERT INTO Empl_in_CP VALUES (1308, 5);
+INSERT INTO Empl_in_CP VALUES (1308, 6);
+INSERT INTO Empl_in_CP VALUES (1309, 13);
+INSERT INTO Empl_in_CP VALUES (1309, 14);
+INSERT INTO Empl_in_CP VALUES (1309, 15);
+INSERT INTO Empl_in_CP VALUES (1309, 18);
+INSERT INTO Empl_in_CP VALUES (1309, 19);
+INSERT INTO Empl_in_CP VALUES (1309, 20);
+
