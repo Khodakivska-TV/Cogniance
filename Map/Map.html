@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+		5 Companies on Map
+		</title>
+		<meta charset="utf-8" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+		 <!--[if lte IE 8]>
+		 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+ 		 <![endif]-->
+		 <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+	</head>
+	<body>
+		<center>
+			<p>Below You can find contant info of 5 Companies:</p>
+			<strong>Cogniance, GlobalLogic, Ciklum, Luxoft, Ernst & Young</strong>
+			<p></p>
+
+
+			<div id="frame" style="width: 80%; height: 85%; min-height: 600px"></div>
+		</center>
+
+	<script>
+
+		var map = L.map('frame').setView([50.42766, 30.47613], 13);
+
+		L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Burrrum Map'
+		}).addTo(map);
+
+// Cogniance
+		var Cogniance = L.icon({
+				    iconUrl: 'Cogniance_logo.png',
+				    shadowUrl: '',
+
+				    iconSize:     [177, 79], // size of the icon
+				    shadowSize:   [50, 64], // size of the shadow
+				    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+				    shadowAnchor: [4, 62],  // the same for the shadow
+				    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+				});
+
+		L.marker([50.41477, 30.51964], {icon: Cogniance}).addTo(map)
+			.bindPopup("<b> Cogniance </b><br />Боженко, 86 О,<br />Київ, 03680,<br />Україна<br />Тел:  +380-44-351-1939<br />Факс: +380-44-351-1939 ");
+
+// GlobalLogic
+		var GlobalLogic = L.icon({
+				    iconUrl: 'GlobalLogic_logo.png',
+				    shadowUrl: '',
+
+				    iconSize:     [191, 34], // size of the icon
+				    shadowSize:   [50, 64], // size of the shadow
+				    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+				    shadowAnchor: [4, 62],  // the same for the shadow
+				    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+				});
+
+		L.marker([50.42477, 30.50646], {icon: GlobalLogic}).addTo(map)
+			.bindPopup("<b>GlobalLogic</b><br />БЦ 'Протасів Яр'<br />М.Грінченко, 2/1,<br />Київ, 03680,<br />Україна<br />Тел:  +380-44-492-9695 ");
+
+
+// Ciklum
+		var Ciklum = L.icon({
+				    iconUrl: 'Ciklum_logo.jpg',
+				    shadowUrl: '',
+
+				    iconSize:     [216, 66], // size of the icon
+				    shadowSize:   [50, 64], // size of the shadow
+				    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+				    shadowAnchor: [4, 62],  // the same for the shadow
+				    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+				});
+
+		L.marker([50.42278, 30.50513], {icon: Ciklum}).addTo(map)
+			.bindPopup("<b>Ciklum</b><br />М.Амосова, 12,<br />Київ, 03680,<br />Україна<br />Тел:  +380-44-545-7745<br />Факс: +380-44-498-1698 ");
+
+// Luxoft
+		var Luxoft = L.icon({
+				    iconUrl: 'Luxoft_logo.png',
+				    shadowUrl: '',
+
+				    iconSize:     [282, 103], // size of the icon
+				    shadowSize:   [50, 64], // size of the shadow
+				    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+				    shadowAnchor: [4, 62],  // the same for the shadow
+				    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+				});
+
+		L.marker([50.44956, 30.4104], {icon: Luxoft}).addTo(map)
+			.bindPopup("<b>Luxoft</b><br />Родищева, 10/14,<br />Київ, 03680,<br />Україна<br />Тел: +380-44-390-0950 <br />Факс: +380-44-390-0951 ");
+
+
+// Luxoft
+		var Luxoft = L.icon({
+				    iconUrl: 'Luxoft_logo.png',
+				    shadowUrl: '',
+
+				    iconSize:     [282, 103], // size of the icon
+				    shadowSize:   [50, 64], // size of the shadow
+				    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+				    shadowAnchor: [4, 62],  // the same for the shadow
+				    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+				});
+
+		L.marker([50.39616, 30.50159], {icon: Luxoft}).addTo(map)
+			.bindPopup("<b>Luxoft</b><br />Васильківська, 14,<br />Київ, 03040,<br />Україна<br />Тел:  +380-44-238-8108 <br />Факс: +380-44-238-8109  ");
+        
+
+// Ernst & Young
+		var EY = L.icon({
+				    iconUrl: 'EY_logo.gif',
+				    shadowUrl: '',
+
+				    iconSize:     [368, 200], // size of the icon
+				    shadowSize:   [50, 64], // size of the shadow
+				    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+				    shadowAnchor: [4, 62],  // the same for the shadow
+				    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+				});
+
+		L.marker([50.44713, 30.52337], {icon: EY}).addTo(map)
+			.bindPopup("<b>Ernst & Young</b><br />Хрещатик, 19А,<br />Київ, 01001,<br />Україна<br />Тел: +380-44-490-3000 <br />Факс: +380-44-490-3030  ");
+
+	</script>
+	</body>
+</html>
