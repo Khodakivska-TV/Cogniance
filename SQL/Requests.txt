@@ -57,7 +57,7 @@ from CP
 where deadline>"2013-12-31";
 
 /* 10. Point out projects which have initiated in 2012.
-Result set: project (name), date of initiation, date of deadline, department. *
+Result set: project (name), date of initiation, date of deadline, department. */
 Select Name, Initiation, Deadline, Department 
 from CP inner join Departments 
 on CP.Id_dep=Departments.Id_dep 
